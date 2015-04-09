@@ -10,10 +10,16 @@
     </template>
     <script>
         (function () {
-            var count = 10;
+            var data = {
+                count: 10
+            };
             Polymer({
                 ready: function() {
-                    this.count = count;
+                    this.data = data;
+                },
+
+                add: function() {
+                    data.count = data.count + 1;
                 }
             })
         })();
@@ -24,13 +30,30 @@
     <template>
         <app-globals id="globals"></app-globals>
         <button on-click="{{add}}">Click</button>
-        {{$.globals.count}}
+        {{$.globals.data.count}}
     </template>
     <script>
         (function () {
             Polymer({
                 add: function() {
-                    this.$.globals.count++;
+                    this.$.globals.add();
+                }
+            });
+        })();
+    </script>
+</polymer-element>
+
+<polymer-element name="my-element2">
+    <template>
+        <app-globals id="globals2"></app-globals>
+        <button on-click="{{add}}">Click2</button>
+        {{$.globals2.data.count}}
+    </template>
+    <script>
+        (function () {
+            Polymer({
+                add: function() {
+                    this.$.globals2.add();
                 }
             });
         })();

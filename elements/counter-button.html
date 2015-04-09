@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-element">
+    <template>
+        <button on-click="{{add}}">Click</button>
+        {{count}}
+    </template>
+    <script>
+        (function () {
+            Polymer({
+                name: 'Abhi',
+                count: 0,
+                add: function() {
+                    this.count = this.count + 1;
+                }
+            });
+        })();
+    </script>
+</polymer-element>

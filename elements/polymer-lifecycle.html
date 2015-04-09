@@ -1,0 +1,30 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-element">
+    <template>
+    </template>
+    <script>
+        (function () {
+            Polymer({
+                ready: function() {
+                    console.log('ready');
+                },
+                created: function() {
+                    console.log('created');
+                },
+                attached: function() {
+                    console.log('attached');
+                },
+                domReady: function() {
+                    console.log('domReady');
+                },
+                detached: function() {
+                    console.log('detached');
+                },
+                attributeChanged: function(attrName, oldVal, newVal) {
+                    console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
+                }
+            });
+        })();
+    </script>
+</polymer-element>
